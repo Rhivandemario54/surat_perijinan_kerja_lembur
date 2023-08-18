@@ -14,25 +14,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/', function () {
     return view('home', [
         "title" => "Home"
     ]);
 });
+
 Route::get('/about', function () {
     return view('about', [
         "title" => "About",
         "name" => "RhivanDemario",
         "email" => "rhivandemario54@gmail.com",
-        "image" => "profile.jpeg"
+        "image" => "profile.JPEG"
     ]);
 });
 
 Route::get('/karyawan', function () {
-    return view('karyawan', [
-    "title" => "Karyawan"
+    return view('Karyawan', [
+        "title" => "Karyawan"
     ]);
 });
 
 Route::get('/blog', [PostController::class, 'index']);
-Route::get('posts/{slug}', [PostController::class, 'show']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
