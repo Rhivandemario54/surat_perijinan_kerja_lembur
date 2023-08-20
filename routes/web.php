@@ -40,7 +40,7 @@ Route::get('/karyawan', function () {
 
 Route::get('/categories', function () {
     return view('categories', [
-        'tittle' => 'Post Categories',
+        'title' => 'Post Categories',
         'categories' => Category::all()
     ]);
 });
@@ -54,7 +54,7 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('category', [
-        'tittle' => $category->name,
+        'title' => $category->name,
         'posts' => $category->posts,
         'category' => $category->name
     ]);
